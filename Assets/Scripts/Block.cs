@@ -17,4 +17,18 @@ public class Block : MonoBehaviour {
 		Destroy(gameObject, destroyT);
 	}
 
+
+	void OnCollisonEnter2D (Collision2D col)
+	{
+		if(col.gameObject.tag == "Player")
+		{
+			gameOver();
+		}
+	}
+
+	public void gameOver()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+	}
+
 }

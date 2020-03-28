@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -25,9 +26,18 @@ public class Player : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter2D ()
+	void OnCollisonEnter2D (Collision2D col)
 	{
-		FindObjectOfType<GameManager>().EndGame();
+		if(col.gameObject.tag == "block")
+		{
+			gameOver();
+			Debug.Log("Game OVER");
+		}
+	}
+
+	public void gameOver()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 	}
 
 }

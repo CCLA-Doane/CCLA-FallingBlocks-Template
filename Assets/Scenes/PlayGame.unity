@@ -2086,7 +2086,7 @@ GameObject:
   - component: {fileID: 619462072}
   m_Layer: 0
   m_Name: BlockSpawner
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
